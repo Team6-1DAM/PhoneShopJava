@@ -41,8 +41,8 @@ public interface UserDao {
     int addUser(String name,String username, String password, String role, String tel,String address,String zip_code,String city,String country);
     @SqlUpdate("DELETE FROM users WHERE id_user = ?")
     int removeUser(int id_user);
-    @SqlUpdate("UPDATE users set name =?, username=?, password=SHA1(?), role = ?,tel = ?,address= ?,zip_code= ?,city= ?,country= ? WHERE id_user = ?")
-    int updateUser(String name,String username,String password,String role,String tel,String address,String zip_code,String city,String country, int id_user);
+    @SqlUpdate("UPDATE users set name =?, username=?, password=SHA1(?), role = ?,tel = ?,address= ?,zip_code= ?,city= ?,country= ?, credit_limit= ? WHERE id_user = ?")
+    int updateUser(String name,String username,String password,String role,String tel,String address,String zip_code,String city,String country, float credit_limit, int id_user);
 
 
 }

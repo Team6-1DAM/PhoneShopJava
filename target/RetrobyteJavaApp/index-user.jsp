@@ -27,60 +27,60 @@
 
     <div class="container my-6 bg-dark">
 
-        <table class="table table-dark table-striped">
-            <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Username</th>
-                <th>Role</th>
-                <th>Ciudad</th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <%
-                if (!role.equals("admin")){
-                    response.sendRedirect("/retrocomputer");
-                }
-                //Si no eres el administrador no puedes entrar a esta pagina
-                String search = "";
-                if (request.getParameter("search") != null)
-                    search = request.getParameter("search");
+                <table class="table table-dark table-striped">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Ciudad</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%
+                        if (!role.equals("admin")){
+                            response.sendRedirect("/retrocomputer");
+                        }
+                        //Si no eres el administrador no puedes entrar a esta pagina
+                        String search = "";
+                        if (request.getParameter("search") != null)
+                            search = request.getParameter("search");
 
-                try {
-                    Database.connect();
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                List<User> listuser = null;
-                if (search.isEmpty()) {
-                    listuser = Database.jdbi.withExtension(UserDao.class, dao -> dao.getAllUsers());
-                } else {
-                    final String searchTerm = search;
-                    listuser = Database.jdbi.withExtension(UserDao.class, dao -> dao.getUsers(searchTerm));
-                }
+                        try {
+                            Database.connect();
+                        } catch (ClassNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
+                        List<User> listuser = null;
+                        if (search.isEmpty()) {
+                            listuser = Database.jdbi.withExtension(UserDao.class, dao -> dao.getAllUsers());
+                        } else {
+                            final String searchTerm = search;
+                            listuser = Database.jdbi.withExtension(UserDao.class, dao -> dao.getUsers(searchTerm));
+                        }
 
-                for (User user : listuser) {
-            %>
-            <tr>
-                <td><%=user.getName()%></td>
-                <td><%=user.getUsername()%></td>
-                <td><%=user.getRole()%></td>
-                <td><%=user.getCity()%></td>
-                <th><a href="view-user.jsp?id_user=<%= user.getId_user()%>" type="button" class="btn btn-sm btn-outline-success">Ver Usuario</a></th>
-                <th><a href="register-user.jsp?id_user=<%= user.getId_user()%>" type="button" class="btn btn-sm btn-outline-primary">Editar Usuario</a></th>
-                <th> <a href="remove-user?id_user=<%= user.getId_user()%>" type="button" class="btn btn-sm btn-outline-danger">Eliminar Usuario</a></th>
+                        for (User user : listuser) {
+                    %>
+                    <tr>
+                        <td><%=user.getName()%></td>
+                        <td><%=user.getUsername()%></td>
+                        <td><%=user.getRole()%></td>
+                        <td><%=user.getCity()%></td>
+                        <th><a href="view-user.jsp?id_user=<%= user.getId_user()%>" type="button" class="btn btn-sm btn-outline-success">Ver Usuario</a></th>
+                        <th><a href="register-user.jsp?id_user=<%= user.getId_user()%>" type="button" class="btn btn-sm btn-outline-primary">Editar Usuario</a></th>
+                        <th> <a href="remove-user?id_user=<%= user.getId_user()%>" type="button" class="btn btn-sm btn-outline-danger">Eliminar Usuario</a></th>
 
-            </tr>
-            <%
-                }
-            %>
-            </tbody>
-        </table>
+                    </tr>
+                    <%
+                        }
+                    %>
+                    </tbody>
+                </table>
         <br/>
         <p><a href="index.jsp" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Volver al Menu Inicial</a></p>
     </div>

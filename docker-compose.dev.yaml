@@ -1,0 +1,15 @@
+version: "3.4"
+name: steamweb
+services:
+  db:
+    image: mysql:8.0.42-oracle
+    container_name: retrobyte-db-dev
+    environment:
+      MYSQL_USER: 'mrubio8'
+      MYSQL_PASSWORD: 'mrubio8'
+      MYSQL_PORT: 3306
+      MYSQL_ROOT_PASSWORD: 'rootpassword'
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d

@@ -48,7 +48,7 @@ public class EditUser extends HttpServlet {
             String city = request.getParameter("city");
             String country = request.getParameter("country");
             String role = "user";
-//            float credit_limit = CurrencyUtils.parse(request.getParameter("credit_limit"));
+            float credit_limit = 500;
             //solo el administrador es capaz de cambiarse el role
             HttpSession currentSession = request.getSession();
             if (currentSession.getAttribute("role") != null) {
@@ -56,6 +56,10 @@ public class EditUser extends HttpServlet {
                     if (!request.getParameter("role").isBlank()) {
                         role = request.getParameter("role");
                     }
+                    if (!request.getParameter("role").isBlank()) {
+                        role = request.getParameter("role");
+                    }
+                    credit_limit = CurrencyUtils.parse(request.getParameter("credit_limit"));
                 }
             }
 
@@ -71,9 +75,10 @@ public class EditUser extends HttpServlet {
                         "Bienvenido¡¡¡ Ya eres un usuario registrado de RetroByte</div>");
             } else {
                 final int finalid = id;
+                final float creditlimit = credit_limit;
                 int affectedRows = Database.jdbi.withExtension(UserDao.class,
                         dao -> dao.updateUser(name, username, finalpassword, finalrole, tel, address,
-                                zip_code, city, country, finalid));
+                                zip_code, city, country,creditlimit, finalid));
                 response.getWriter().println("<div class='alert alert-success' role='alert'>" +
                         "Modificacion de usuario realizada correctamente</div>");
 
@@ -87,6 +92,10 @@ public class EditUser extends HttpServlet {
             sqle.printStackTrace();
             response.getWriter().println("<div class='alert alert-danger' role='alert'>" +
                     "Error conectando con la base de datos</div>");
+        } catch (ParseException pe) {
+            pe.printStackTrace();
+            response.getWriter().println("<div class='alert alert-danger' role='alert'>" +
+                    "El formato limite de credito es no válido</div>");
         }
     }
     private boolean hasValidationErrors(HttpServletRequest request, HttpServletResponse response,int id) throws IOException {

@@ -1,11 +1,12 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="includes/header-login.jsp"%>
 
-<div class="py-5 container">
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="register-user.jsp" class="btn btn-outline-danger me-md-2" type="button">Registrarse en RetroByte</a>
-    </div>
-</div>
+ <div class="py-5 container">
+     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+         <a href="register-user.jsp" class="btn btn-outline-danger me-md-2" type="button">Registrarse en RetroByte</a>
+     </div>
+ </div>
 
 <div class="d-flex align-items-center py-4 bg-body-tertiary bg-image2">
 
