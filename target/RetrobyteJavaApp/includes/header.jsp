@@ -11,6 +11,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+<%
+    HttpSession currentSession = request.getSession();
+    String role = "anonymous";
+    String username_init ="";
+    int user_id=0;
+    if (currentSession.getAttribute("role") != null) {
+        role = currentSession.getAttribute("role").toString();
+    }
+    if (currentSession.getAttribute("username") != null) {
+        username_init = currentSession.getAttribute("username").toString();
+    }
+    if (currentSession.getAttribute("id_user") != null) {
+        user_id=Integer.parseInt(currentSession.getAttribute("id_user").toString());
+    }
+%>
 <body class="bg-image">
 
 <header>
@@ -27,40 +42,6 @@
             </div>
         </div>
 
-        <div class="between-sections"></div>
-
-        <div class="title-words">
-            <div class="shadows">
-                <span>c</span>
-                <span>o</span>
-                <span>m</span>
-                <span>p</span>
-                <span>r</span>
-                <span>a</span>
-                <span>-</span>
-                <span>v</span>
-                <span>e</span>
-                <span>n</span>
-                <span>t</span>
-                <span>a</span>
-                <span>-</span>
-                <span>r</span>
-                <span>e</span>
-                <span>s</span>
-                <span>t</span>
-                <span>a</span>
-                <span>u</span>
-                <span>r</span>
-                <span>a</span>
-                <span>c</span>
-                <span>i</span>
-                <span>o</span>
-                <span>n</span>
-                <span>e</span>
-                <span>s</span>
-            </div>
-        </div>
-        <div class="between-sections"></div>
     </div>
 
 </header>

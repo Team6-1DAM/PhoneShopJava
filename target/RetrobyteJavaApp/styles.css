@@ -94,8 +94,14 @@ p{
 }
 
 .between-sections {
-    height: 4vh;
+    height: 4rem;
 }
+
+.bg-image2 {
+    background: radial-gradient(ellipse at top, #75e664, transparent),
+    radial-gradient(ellipse at bottom, #75e664, transparent);
+}
+
 
 .title-words {
     width: 100vw;
@@ -117,60 +123,6 @@ p{
 }
 .shadows:hover {
     text-shadow: -16px 6px 15px #ced0d3;
-}
-
-.slider-frame {
-    width:75vw;
-    max-width: 960px;
-    min-width: 480px;
-    margin:50px auto 0;
-    overflow: hidden;
-    /* overflow: hidden; asegura que solo se muestre la parte del contenido que está dentro del marco del slider,
-     creando el efecto de "ventana" a través de la cual se ven las imágenes o elementos que se desplazan. */
-}
-
-.slider-frame ul {
-    display: flex;
-    padding:0;
-    width: 400%;
-    /* la lista completa ocupará 4 veces ese ancho. Esto es necesario para que se pueda realizar el desplazamiento horizontal de los elementos. */
-
-    animation: slide 20s infinite alternate ease-in-out;
-    /* slide es el nombre de la animacion, 20 sg su tiempo, infinite es indefinido, alternate es hacia
-    la derecha hasta el final y luego vuelve hacia la izquierda, ease-in-out controla la velocidad*/
-}
-
-.slider-frame li {
-    width: 100%;
-    list-style: none;
-}
-
-.slider-frame img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0px 3px 5px rgba(15,15,15,0.5)
-}
-
-@keyframes slide {
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
-    /* Al inicio de la animación (0%), el margen izquierdo del elemento animado es 0. Esto significa que el elemento está en su posición original, sin desplazamiento
-    Desde el 0% hasta el 20% de la duración de la animación, el margen izquierdo se mantiene en 0. Esto crea una pausa al principio,
-    mostrando la primera "diapositiva" durante un 20% del tiempo total de la animación
-    */
-
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-    /* En el 25% de la animación, el margen izquierdo cambia a -100%. Esto desplaza el elemento animado hacia la izquierda en un 100% de su propio ancho.
-     En un contexto de slider, esto mueve la segunda "diapositiva" a la vista.
-     Desde el 25% hasta el 45% de la animación, el margen izquierdo se mantiene en -100%.
-     Esto crea otra pausa, mostrando la segunda "diapositiva" durante un 20% del tiempo total*/
-
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
 }
 
 .networks {

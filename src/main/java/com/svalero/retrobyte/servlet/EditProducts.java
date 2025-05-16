@@ -31,13 +31,13 @@ public class EditProducts extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
 
-        //solo puede crear y editar productos el administrador
-//        HttpSession currentSession = request.getSession();
-//        if (currentSession.getAttribute("role") != null) {
-//            if (!currentSession.getAttribute("role").equals("admin")) {
-//                response.sendRedirect("/retrocomputer");
-//            }
-//        }
+//        solo puede crear y editar productos el administrador
+        HttpSession currentSession = request.getSession();
+        if (currentSession.getAttribute("role") != null) {
+            if (!currentSession.getAttribute("role").equals("admin")) {
+                response.sendRedirect("/retrobyte");
+            }
+        }
 
         try {
             //Validaciones de los campos del formulario register-product

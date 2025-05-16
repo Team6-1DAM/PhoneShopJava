@@ -22,13 +22,13 @@
     %>
     <div class="py-5 container">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
-<%--            <%--%>
-<%--                if (!role.equals("anonymous")) {--%>
-<%--            %>--%>
-<%--                <p class="text-danger"><%= username_init%></p>--%>
-<%--            <%--%>
-<%--                }--%>
-<%--            %>--%>
+            <%
+                if (!role.equals("anonymous")) {
+            %>
+                <p class="text-danger"><%= username_init%></p>
+            <%
+                }
+            %>
         </div>
     </div>
 
@@ -43,22 +43,22 @@
                         <%if (!products.isStock_units()) { %>
                             <a href="mailto:retrobyte@retrobyte.com" type="button" class="btn btn-sm btn-outline-danger">Consultar Disponibilidad</a>
                         <%} else {%>
-<%--                            <%--%>
-<%--                                if (role.equals("anonymous")) {--%>
-<%--                            %>--%>
+                            <%
+                                if (role.equals("anonymous")) {
+                            %>
                                 <a href="login.jsp"  type="button" class="btn btn-sm btn-outline-danger">Inicia sesion para comprar</a>
-<%--                            <% } else {%>--%>
-<%--                                <%--%>
-<%--                                    if (!role.equals("admin")) {--%>
-<%--                                %>--%>
-<%--&lt;%&ndash;                        solo daremos la opcion de compra si no eres administrador y estas registrado, es decir un usuario normal&ndash;%&gt;--%>
-<%--                                    <a href="place-an-order?id_product=<%= products.getId_product()%>"  type="button" class="btn btn-sm btn-outline-danger">Comprar</a>--%>
-<%--                                <%--%>
-<%--                                    }--%>
-<%--                                %>--%>
-<%--                            <%--%>
-<%--                                }--%>
-<%--                            %>--%>
+                            <% } else {%>
+                                <%
+                                    if (!role.equals("admin")) {
+                                %>
+<%--                        solo daremos la opcion de compra si no eres administrador y estas registrado, es decir un usuario normal--%>
+                                    <a href="place-an-order?id_product=<%= products.getId_product()%>"  type="button" class="btn btn-sm btn-outline-danger">Comprar</a>
+                                <%
+                                    }
+                                %>
+                            <%
+                                }
+                            %>
 
                         <%}%>
                     </div>
