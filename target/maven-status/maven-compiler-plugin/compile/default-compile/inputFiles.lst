@@ -5,9 +5,11 @@ C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\servlet\LoginServlet.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\domain\Suppliers.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\dao\ProductsDao.java
+C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\servlet\RemoveSuppliers.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\servlet\RemoveUser.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\dao\SuppliersMapper.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\util\ErrorUtils.java
+C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\servlet\EditSuppliers.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\dao\UserMapper.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\servlet\RemoveProducts.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\dao\SuppliersDao.java
@@ -17,5 +19,6 @@ C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\util\CurrencyUtils.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\dao\UserDao.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\servlet\EditUser.java
+C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\servlet\RemoveALLSelectProducts.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\domain\User.java
 C:\Users\migue\OneDrive\Escritorio\PhoneShopJava\PhoneShopJava\src\main\java\com\svalero\retrobyte\dao\Database.java

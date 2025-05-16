@@ -42,7 +42,7 @@
 </script>
 
 <%
-//    if (!role.equals("admin")){
+    //    if (!role.equals("admin")){
 //        response.sendRedirect("/retrocomputer");
 //    }
     //Si no eres el administrador no puedes entrar a esta pagina
@@ -93,40 +93,40 @@
             <div class="col-md-2  text-white bg-dark">
                 <label for="sale_price" class="form-label">Precio de Venta</label>
                 <input type="text" name ="sale_price" class="form-control" id="sale_price" placeholder="18,00"
-                <% if (id !=0) {%> value="<%= CurrencyUtils.format(products.getSale_price()) %>"<% }%>>
+                    <% if (id !=0) {%> value="<%= CurrencyUtils.format(products.getSale_price()) %>"<% }%>>
             </div>
             <div class="col-md-2  text-white bg-dark">
                 <label for="release_date" class="form-label">Fecha de lanzamiento</label>
                 <input type="date" name="release_date" class="form-control" id="release_date" placeholder="dd/mm/yyyy"
-                <% if (id !=0) {%> value="<%=DateUtils.format(products.getRelease_date())%>"<% }%>>
+                    <% if (id !=0) {%> value="<%=DateUtils.format(products.getRelease_date())%>"<% }%>>
             </div>
-<%--            Implementacion de desplegable con informacion dinamica de la BD de la tabla de proveedores--%>
+            <%--            Implementacion de desplegable con informacion dinamica de la BD de la tabla de proveedores--%>
             <div class="col-md-2  text-white bg-dark">
-                    <label for="id_supplier" class="form-label">Codigo del roveedor</label>
-                    <select class="form-select" aria-label="Selector de Proveedor" name="id_supplier" id="id_supplier">
-                        <option selected>
-                            <% if (id !=0) {%>
-                            <%=products.getId_supplier()%>
-                            <%} else {%>
-                            Id Supplier/Name
-                            <%}%>
-                        </option>
-                <%
-                    try {
-                        Database.connect();
-                    } catch (ClassNotFoundException e) {
-                        throw new RuntimeException(e);
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                    }
-                    List<Suppliers> listsuppliers = null;
-                    listsuppliers = Database.jdbi.withExtension(SuppliersDao.class, dao -> dao.getAllSuppliers());
-                    for (Suppliers suppliers : listsuppliers) {
-                %>
-                        <option value="<%=suppliers.getId_supplier()%>"><%=suppliers.getId_supplier()%>:&nbsp;<%=suppliers.getName()%></option>
-                <%
-                    }
-                %>
+                <label for="id_supplier" class="form-label">Codigo del roveedor</label>
+                <select class="form-select" aria-label="Selector de Proveedor" name="id_supplier" id="id_supplier">
+                    <option selected>
+                        <% if (id !=0) {%>
+                        <%=products.getId_supplier()%>
+                        <%} else {%>
+                        Id Supplier/Name
+                        <%}%>
+                    </option>
+                    <%
+                        try {
+                            Database.connect();
+                        } catch (ClassNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
+                        List<Suppliers> listsuppliers = null;
+                        listsuppliers = Database.jdbi.withExtension(SuppliersDao.class, dao -> dao.getAllSuppliers());
+                        for (Suppliers suppliers : listsuppliers) {
+                    %>
+                    <option value="<%=suppliers.getId_supplier()%>"><%=suppliers.getId_supplier()%>:&nbsp;<%=suppliers.getName()%></option>
+                    <%
+                        }
+                    %>
                 </select>
             </div>
             <div class="col-md-4  text-white bg-dark">
@@ -135,7 +135,7 @@
             </div>
 
             <div class="col-12  text-white bg-dark">
-                    <input type="submit" value="Enviar" id="edit-button"/>
+                <input type="submit" value="Enviar" id="edit-button"/>
             </div>
             <input type="hidden" name="id_product" value="<%=id%>"/>
         </form>

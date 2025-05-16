@@ -1,12 +1,11 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="includes/header-login.jsp"%>
 
- <div class="py-5 container">
-     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-         <a href="register-user.jsp" class="btn btn-outline-danger me-md-2" type="button">Registrarse en RetroByte</a>
-     </div>
- </div>
+<div class="py-5 container">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="register-user.jsp" class="btn btn-outline-danger me-md-2" type="button">Registrarse en RetroByte</a>
+    </div>
+</div>
 
 <div class="d-flex align-items-center py-4 bg-body-tertiary bg-image2">
 
@@ -32,7 +31,7 @@
 </div>
 <footer class="text-body-secondary py-5">
     <div class="container">
-        <p class="mb-1">&copy; 2024 RetroByte</p>
+        <p class="mb-1">&copy; 2025 RetroByte</p>
     </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

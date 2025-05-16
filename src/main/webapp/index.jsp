@@ -44,7 +44,7 @@
                 <br/>
                 <a href="register-product.jsp" class="btn btn-sm btn-outline-primary" type="button">Alta Producto</a>
                 <a href="index-user.jsp" class="btn btn-sm btn-outline-danger" type="button">Usuarios</a>
-                <%--                <a href="index-suppliers.jsp" class="btn btn-sm btn-outline-primary" type="button">Proveedores</a>--%>
+                <a href="index-suppliers.jsp" class="btn btn-sm btn-outline-primary" type="button">Proveedores</a>
                 <%--                <a href="all-orders_done.jsp" class="btn btn-sm btn-outline-danger" type="button">Pedidos Realizados</a>--%>
                 <%
                 } else {
@@ -64,6 +64,19 @@
         </div>
     </section>
 
+    <%--    <div class="between-sections"></div>--%>
+
+    <%--    <section class="slider-frame">--%>
+    <%--        <ul>--%>
+    <%--            <li><img src="./icons/equipo.jpg" alt=""></li>--%>
+    <%--            <li><img src="./icons/placa.jpg" alt=""></li>--%>
+    <%--            <li><img src="./icons/lisa.jpg" alt=""></li>--%>
+    <%--            <li><img src="./icons/servicio.jpg" alt=""></li>--%>
+    <%--        </ul>--%>
+    <%--    </section>--%>
+
+    <%--    <div class="between-sections"></div>--%>
+    <%--    <div class="between-sections"></div>--%>
 
 
     <div class="title-words">

@@ -1,4 +1,5 @@
 com\svalero\retrobyte\dao\SuppliersMapper.class
+com\svalero\retrobyte\servlet\RemoveALLSelectProducts.class
 com\svalero\retrobyte\servlet\RemoveUser.class
 com\svalero\retrobyte\dao\SuppliersDao.class
 com\svalero\retrobyte\util\Constants.class
@@ -10,9 +11,11 @@ com\svalero\retrobyte\dao\ProductsMapper.class
 com\svalero\retrobyte\dao\Database.class
 com\svalero\retrobyte\dao\UserMapper.class
 com\svalero\retrobyte\servlet\LogoutServlet.class
+com\svalero\retrobyte\servlet\RemoveSuppliers.class
 com\svalero\retrobyte\domain\Products.class
 com\svalero\retrobyte\dao\ProductsDao.class
 com\svalero\retrobyte\util\CurrencyUtils.class
+com\svalero\retrobyte\servlet\EditSuppliers.class
 org\example\Main.class
 com\svalero\retrobyte\servlet\EditProducts.class
 com\svalero\retrobyte\servlet\LoginServlet.class

@@ -44,7 +44,7 @@
                 <br/>
                 <a href="register-product.jsp" class="btn btn-sm btn-outline-primary" type="button">Alta Producto</a>
                 <a href="index-user.jsp" class="btn btn-sm btn-outline-danger" type="button">Usuarios</a>
-                <%--                <a href="index-suppliers.jsp" class="btn btn-sm btn-outline-primary" type="button">Proveedores</a>--%>
+                <a href="index-suppliers.jsp" class="btn btn-sm btn-outline-primary" type="button">Proveedores</a>
                 <%--                <a href="all-orders_done.jsp" class="btn btn-sm btn-outline-danger" type="button">Pedidos Realizados</a>--%>
                 <%
                 } else {

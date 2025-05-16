@@ -12,59 +12,59 @@
     <%
         try {
             Database.connect();
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-         }
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         int id_product = Integer.parseInt(request.getParameter("id_product"));
         Products products = Database.jdbi.withExtension(ProductsDao.class, dao -> dao.getOneProducts(id_product));
     %>
     <div class="py-5 container">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
-            <%
-                if (!role.equals("anonymous")) {
-            %>
-                <p class="text-danger"><%= username_init%></p>
-            <%
-                }
-            %>
+            <%--            <%--%>
+            <%--                if (!role.equals("anonymous")) {--%>
+            <%--            %>--%>
+            <%--                <p class="text-danger"><%= username_init%></p>--%>
+            <%--            <%--%>
+            <%--                }--%>
+            <%--            %>--%>
         </div>
     </div>
 
     <div class="container my-3">
         <div class="row">
-            <div class="col-sm-12  col-md-4 col-lg-4 col-xl-4 py-4 bg-image2">
+            <div class="col-sm-12  col-md-4 col-lg-4 col-xl-4 py-4">
                 <h3 class="text-danger">Foto del producto</h3>
                 <div class="card shadow-sm">
                     <img src="../retrobyte_pictures/<%=products.getImage()%>"  alt="<%= products.getDescription() %>"/>
                     <div class="btn-group">
-<%--                        <%if (products.getStock_units() == 0) { %>--%>
+                        <%--                        <%if (products.getStock_units() == 0) { %>--%>
                         <%if (!products.isStock_units()) { %>
-                            <a href="mailto:retrobyte@retrobyte.com" type="button" class="btn btn-sm btn-outline-danger">Consultar Disponibilidad</a>
+                        <a href="mailto:retrobyte@retrobyte.com" type="button" class="btn btn-sm btn-outline-danger">Consultar Disponibilidad</a>
                         <%} else {%>
-                            <%
-                                if (role.equals("anonymous")) {
-                            %>
-                                <a href="login.jsp"  type="button" class="btn btn-sm btn-outline-danger">Inicia sesion para comprar</a>
-                            <% } else {%>
-                                <%
-                                    if (!role.equals("admin")) {
-                                %>
-<%--                        solo daremos la opcion de compra si no eres administrador y estas registrado, es decir un usuario normal--%>
-                                    <a href="place-an-order?id_product=<%= products.getId_product()%>"  type="button" class="btn btn-sm btn-outline-danger">Comprar</a>
-                                <%
-                                    }
-                                %>
-                            <%
-                                }
-                            %>
+                        <%
+                            if (role.equals("anonymous")) {
+                        %>
+                        <a href="login.jsp"  type="button" class="btn btn-sm btn-outline-danger">Inicia sesion para comprar</a>
+                        <% } else {%>
+                        <%
+                            if (!role.equals("admin")) {
+                        %>
+                        <%--                        solo daremos la opcion de compra si no eres administrador y estas registrado, es decir un usuario normal--%>
+                        <a href="place-an-order?id_product=<%= products.getId_product()%>"  type="button" class="btn btn-sm btn-outline-danger">Comprar</a>
+                        <%
+                            }
+                        %>
+                        <%
+                            }
+                        %>
 
                         <%}%>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12  col-md-8 col-lg-8 col-xl-8 py-4 bg-image2">
+            <div class="col-sm-12  col-md-8 col-lg-8 col-xl-8 py-4">
                 <h3 class="text-danger">Datos del Producto</h3>
                 <table class="table table-dark table-striped">
                     <tr>
